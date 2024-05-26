@@ -1,0 +1,43 @@
+body{
+    background-color:#222831;
+}
+
+h1{
+    color: #EEEEEE;
+    size: 5rem;
+}
+
+h2{
+    color: #EEEEEE;
+}
+
+p{
+    color: #EEEEEE;
+}
+
+.btn{
+    color: #222831;
+    background-color: #00ADB5;
+    border-color: #222831;
+}
+
+label{
+    color: #EEEEEE;
+}
+
+.titlediv{
+    background-color: #222831;
+    margin-bottom: 300px;
+}
+
+.blogs{
+    background-color: #393E46;
+}
+
+.white{
+    color: #EEEEEE;
+}
+
+.centre{
+    text-align: center;
+}
