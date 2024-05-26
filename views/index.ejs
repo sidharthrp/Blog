@@ -1,0 +1,37 @@
+<%- include("header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+</head>
+<body>
+    <div class="px-4 py-5 my-5 text-center">
+    <p class="lead mb-2">To write blog post click below</p>
+    
+    <form action="/submit" method="POST">
+        <input class="btn btn-primary btn-lg px-4 mb-5 gap-3" type="submit" value="Write">
+    </form>
+    
+    
+        <div class = "blogs">
+        <% for(var i = 0; i< blogTitles.length; i++){ %>
+            <h2 class="lead fw-bold"><%=blogTitles[i] %></h2>
+            <p class="lead mb-2"><%=blogContents[i] %></p>
+        <% } %>
+        </div>
+    <% if(locals.blogTitles.length>0) { %>
+    <form action="/delete" method="POST">
+        <input class="btn btn-primary btn-lg px-4 mb-5 gap-3" type="submit" value="Delete">
+    </form>
+    <form action="/update" method="POST">
+        <input class="btn btn-primary btn-lg px-4 mb-5 gap-3" type="submit" value="Update">
+    </form>
+    <% } %>
+</div>
+</body>
+</html>
+
+<%- include("footer.ejs") %>

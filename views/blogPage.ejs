@@ -1,0 +1,43 @@
+<%- include("header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="px-4 py-5 my-5 text-center">
+        <%if(! locals.blogContent){%>
+        <form action="/submit/new" method="POST">
+            <label>Blog Title</label>
+            <br>
+            <input type="text" name="title">
+            <br>
+            <label>Content</label>
+            <br>
+            <textarea name="content" rows="4" cols="50"></textarea>
+            <br>
+            <!-- <input type="text" class="form-control input-lg" name="content"> -->
+            <input class="btn btn-primary btn-lg px-4 gap-3" type="submit" value="Save">
+        </form>
+        
+        <%} else {%>
+        <form action="/submit/edit" method="POST">
+            <label>Blog Title</label>
+            <br>
+            <input type="text" name="title" value="<%= blogTitle %>"> 
+            <br>
+            <label>Content</label>
+            <br>
+            <textarea name="content" rows="4" cols="50"><%= blogContent %> </textarea>
+            <br>
+            <input class="btn btn-primary btn-lg px-4 gap-3" type="submit" value="Update">
+        </form>
+        <%}%>
+    </div>  
+</body>
+</html>
+
+<%- include("footer.ejs") %>
